@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Escuela Cristóbal Colón de Hualpén</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #24332c;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           BARRA DE NAVEGACIÓN
+        ========================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.97);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 12px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: #245b45;
+            font-weight: bold;
+        }
+
+        .brand-logo {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            border: 3px solid #61b547;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f5fbe9;
+            font-size: 12px;
+            text-align: center;
+            color: #397c38;
+            font-weight: bold;
+        }
+
+        .brand-name {
+            font-size: 15px;
+            line-height: 1.2;
+        }
+
+        .menu {
+            display: flex;
+            list-style: none;
+            gap: 22px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #4b5960;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .menu a:hover {
+            color: #4da63d;
+        }
+
+        /* =========================
+           PORTADA
+        ========================= */
+
+        .hero {
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(110deg, #edf7d8 0%, #f8f8dc 45%, #ccebd4 100%);
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -1px;
+            height: 70px;
+            background: white;
+            clip-path: polygon(0 55%, 10% 35%, 20% 55%, 30% 30%,
+                               40% 55%, 50% 35%, 60% 58%, 70% 32%,
+                               80% 52%, 90% 35%, 100% 55%, 100% 100%, 0 100%);
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+            padding: 80px 30px 130px;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(38px, 5vw, 65px);
+            line-height: 1.05;
+            color: #2f8750;
+            margin-bottom: 25px;
+        }
+
+        .hero-text h2 {
+            font-size: 22px;
+            color: #52615b;
+            font-weight: normal;
+            margin-bottom: 30px;
+        }
+
+        .hero-text p {
+            max-width: 650px;
+            color: #53635d;
+            font-size: 18px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 32px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .btn-primary {
+            background: #4aa84a;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background: #398d3b;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #397d49;
+            border: 2px solid #65ad57;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+        }
+
+        .hero-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-placeholder {
+            width: 330px;
+            height: 330px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.75);
+            border: 10px solid white;
+            box-shadow: 0 15px 50px rgba(48,94,63,0.16);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #43883e;
+            font-size: 27px;
+            font-weight: bold;
+            padding: 35px;
+        }
+
+        /* =========================
+           SECCIONES
+        ========================= */
+
+        section {
+            padding: 90px 25px;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #58a941;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            color: #294e3a;
+            margin-top: 8px;
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: 15px auto 0;
+            color: #68766f;
+        }
+
+        /* =========================
+           NUESTRA ESCUELA
+        ========================= */
+
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+        }
+
+        .info-card {
+            padding: 35px;
+            border-radius: 20px;
+            background: #f4f9ed;
+            border: 1px solid #e0efd7;
+        }
+
+        .info-card h3 {
+            color: #3e8d43;
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .info-card p {
+            color: #5c6963;
+        }
+
+        /* =========================
+           MISION / VISION
+        ========================= */
+
+        .mission {
+            background: #f6faef;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .mission-card {
+            background: white;
+            padding: 40px;
+            border-radius: 22px;
+            box-shadow: 0 10px 30px rgba(50,90,60,0.08);
+            border-top: 6px solid #63ad4d;
+        }
+
+        .mission-card h3 {
+            font-size: 30px;
+            color: #438b42;
+            margin-bottom: 18px;
+        }
+
+        .mission-card p {
+            color: #596660;
+        }
+
+        /* =========================
+           TALLERES
+        ========================= */
+
+        .workshops {
+            background: white;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            border-radius: 20px;
+            overflow: hidden;
+            background: white;
+            border: 1px solid #e3eae3;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.10);
+        }
+
+        .card-image {
+            height: 180px;
+            background: linear-gradient(135deg, #dcefcf, #c4e4ce);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4c8d49;
+            font-size: 50px;
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        .card-body h3 {
+            color: #315b42;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .card-body p {
+            color: #69756f;
+        }
+
+        /* =========================
+           MEDIO AMBIENTE
+        ========================= */
+
+        .environment {
+            background: linear-gradient(120deg, #eff8e8, #dff2e5);
+        }
+
+        .environment-box {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            background: rgba(255,255,255,0.82);
+            padding: 55px 40px;
+            border-radius: 28px;
+        }
+
+        .environment-box .icon {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        .environment-box h2 {
+            color: #388047;
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .environment-box p {
+            color: #5c6962;
+            font-size: 18px;
+        }
+
+        /* =========================
+           ACTIVIDADES
+        ========================= */
+
+        .activities {
+            background: #ffffff;
+        }
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .activity {
+            padding: 35px;
+            border-radius: 20px;
+            background: #f7faf6;
+            border: 1px solid #e2ebe0;
+        }
+
+        .activity h3 {
+            color: #3e8643;
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        /* =========================
+           NOTICIAS
+        ========================= */
+
+        .news {
+            background: #f7faf4;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid #e1e9df;
+        }
+
+        .news-date {
+            color: #65a951;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .news-card h3 {
+            color: #315b42;
+            font-size: 23px;
+            margin: 10px 0;
+        }
+
+        .news-card p {
+            color: #69756f;
+        }
+
+        /* =========================
+           GALERÍA
+        ========================= */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .gallery-item {
+            height: 180px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #d9ebce, #bfe1ca);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #51894c;
+            font-weight: bold;
+        }
+
+        /* =========================
+           CONTACTO
+        ========================= */
+
+        .contact {
+            background: #294e3a;
+            color: white;
+        }
+
+        .contact .section-title h2,
+        .contact .section-title span {
+            color: white;
+        }
+
+        .contact .section-title p {
+            color: #d9e6dc;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .contact-card {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 20px;
+        }
+
+        .contact-card .icon {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .contact-card p {
+            color: #d9e6dc;
+        }
+
+        /* =========================
+           PLATAFORMA ESCOLAR
+        ========================= */
+
+        .platform {
+            padding: 70px 25px;
+            background: #62a94c;
+            color: white;
+            text-align: center;
+        }
+
+        .platform h2 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .platform p {
+            margin-bottom: 25px;
+            font-size: 18px;
+        }
+
+        .platform .btn {
+            background: white;
+            color: #438b43;
+        }
+
+        /* =========================
+           PIE DE PÁGINA
+        ========================= */
+
+        footer {
+            background: #1d392b;
+            color: #cbd8cf;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 14px;
+        }
+
+        /* =========================
+           CELULARES
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .nav-container {
+                flex-direction: column;
+            }
+
+            .menu {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin: auto;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .logo-placeholder {
+                width: 240px;
+                height: 240px;
+                font-size: 21px;
+            }
+
+            .about-grid,
+            .mission-grid,
+            .activity-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            section {
+                padding: 65px 18px;
+            }
+
+            .hero {
+                min-height: auto;
+            }
+
+            .hero-content {
+                padding: 70px 20px 110px;
+            }
+
+            .hero-text h1 {
+                font-size: 42px;
+            }
+
+            .hero-text h2 {
+                font-size: 18px;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .menu {
+                gap: 8px 14px;
+            }
+
+            .menu a {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         MENÚ
+    ========================== -->
+
+    <nav>
+        <div class="nav-container">
+
+            <a href="#inicio" class="brand">
+                <div class="brand-logo">
+                    ESCUELA<br>
+                    CC
+                </div>
+
+                <div class="brand-name">
+                    Escuela Cristóbal Colón<br>
+                    de Hualpén
+                </div>
+            </a>
+
+            <ul class="menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#escuela">Nuestra Escuela</a></li>
+                <li><a href="#mision">Misión y Visión</a></li>
+                <li><a href="#talleres">Talleres</a></li>
+                <li><a href="#noticias">Noticias</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <!-- =========================
+         PORTADA
+    ========================== -->
+
+    <section class="hero" id="inicio">
+
+        <div class="hero-content">
+
+            <div class="hero-text">
+
+                <h1>
+                    Escuela<br>
+                    Cristóbal Colón
+                </h1>
+
+                <h2>
+                    Escuela Cristóbal Colón de Hualpén
+                </h2>
+
+                <p>
+                    Una comunidad educativa comprometida con el aprendizaje,
+                    la inclusión, la convivencia, el arte, el deporte y
+                    el cuidado del medioambiente.
+                </p>
+
+                <div class="buttons">
+
+                    <a href="#escuela" class="btn btn-primary">
+                        Conoce nuestra escuela
+                    </a>
+
+                    <a href="#plataforma" class="btn btn-secondary">
+                        Plataforma Escolar
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-logo">
+
+                <div class="logo-placeholder">
+                    LOGO OFICIAL<br>
+                    ESCUELA<br>
+                    CRISTÓBAL COLÓN
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         NUESTRA ESCUELA
+    ========================== -->
+
+    <section class="about" id="escuela">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>Conócenos</span>
+
+                <h2>Nuestra Escuela</h2>
+
+                <p>
+                    Un espacio de aprendizaje, encuentro y crecimiento
+                    para nuestros estudiantes y toda la comunidad educativa.
+                </p>
+
+            </div>
+
+
+            <div class="about-grid">
+
+                <div class="info-card">
+
+                    <h3>🏫 Nuestra comunidad</h3>
+
+                    <p>
+                        La Escuela Cristóbal Colón de Hualpén busca entregar
+                        experiencias educativas significativas, promoviendo
+                        la inclusión, la convivencia y el desarrollo integral
+                        de sus estudiantes.
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <h3>🌱 Nuestro compromiso</h3>
+
+                    <p>
+                        Nuestra comunidad desarrolla actividades vinculadas
+                        al deporte, las expresiones artísticas y el cuidado
+                        del medioambiente.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MISIÓN Y VISIÓN
+    ========================== -->
+
+    <section class="mission" id="mision">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>Nuestra identidad</span>
+
+                <h2>Misión y Visión</h2>
+
+                <p>
+                    Los principios que orientan nuestro trabajo educativo.
+                </p>
+
+            </div>
+
+
+            <div class="mission-grid">
+
+                <article class="mission-card">
+
+                    <h3>👁️ Visión</h3>
+
+                    <p>
+                        La escuela Cristóbal Colón busca posicionarse como
+                        una institución educativa inclusiva que imparte
+                        aprendizajes de calidad y excelencia, basados en
+                        el desarrollo de valores, habilidades
+                        artístico-deportivas y de cuidado del entorno
+                        natural.
+                    </p>
+
+                </article>
+
+
+                <article class="mission-card">
+
+                    <h3>🏫 Misión</h3>
+
+                    <p>
+                        La escuela Cristóbal Colón de la Ilustre
+                        Municipalidad de Hualpén es una comunidad educativa
+                        que imparte aprendizajes de prekínder a octavo año,
+                        promoviendo entre todos sus integrantes la inclusión,
+                        la Buena Convivencia Escolar, los valores de nuestro
+                        Proyecto Educativo que se evidencian en la convivencia
+                        diaria, las actividades deportivas y artísticas y en
+                        el cuidado del Medioambiente.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TALLERES
+    ========================== -->
+
+    <section class="workshops" id="talleres">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>Participación</span>
+
+                <h2>Nuestros Talleres</h2>
+
+                <p>
+                    Aquí podrás conocer los talleres y actividades que
+                    ofrece nuestra escuela.
+                </p>
+
+            </div>
+
+
+            <div class="cards">
+
+                <article class="card">
+
+                    <div class="card-image">
+                        🎨
+                    </div>
+
+                    <div class="card-body">
+
+                        <h3>Talleres Artísticos</h3>
+
+                        <p>
+                            Espacios para desarrollar la creatividad,
+                            expresión y habilidades artísticas de
+                            nuestros estudiantes.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="card-image">
+                        ⚽
+                    </div>
+
+                    <div class="card-body">
+
+                        <h3>Talleres Deportivos</h3>
+
+                        <p>
+                            Actividades que promueven la vida saludable,
+                            el trabajo en equipo y el desarrollo físico.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="card-image">
+                        🌱
+                    </div>
+
+                    <div class="card-body">
+
+                        <h3>Medioambiente</h3>
+
+                        <p>
+                            Actividades orientadas al cuidado del entorno
+                            natural y la conciencia medioambiental.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MEDIOAMBIENTE
+    ========================== -->
+
+    <section class="environment">
+
+        <div class="container">
+
+            <div class="environment-box">
+
+                <div class="icon">🌱</div>
+
+                <h2>Comprometidos con nuestro Medioambiente</h2>
+
+                <p>
+                    El cuidado del entorno natural forma parte de nuestra
+                    identidad educativa y de las experiencias que
+                    desarrollamos junto a nuestros estudiantes.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         DEPORTES Y ARTE
+    ========================== -->
+
+    <section class="activities">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>Desarrollo integral</span>
+
+                <h2>Deportes y Arte</h2>
+
+                <p>
+                    Espacios que fortalecen las habilidades, talentos
+                    y participación de nuestros estudiantes.
+                </p>
+
+            </div>
+
+
+            <div class="activity-grid">
+
+                <div class="activity">
+
+                    <h3>⚽ Deportes</h3>
+
+                    <p>
+                        Promovemos la actividad física, la vida saludable,
+                        la colaboración y el trabajo en equipo.
+                    </p>
+
+                </div>
+
+
+                <div class="activity">
+
+                    <h3>🎭 Arte y expresión</h3>
+
+                    <p>
+                        Fomentamos la creatividad y las distintas formas
+                        de expresión artística de nuestros estudiantes.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         NOTICIAS
+    ========================== -->
+
+    <section class="news" id="noticias">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>Actualidad</span>
+
+                <h2>Noticias y Actividades</h2>
+
+                <p>
+                    Próximamente aquí podremos publicar las noticias,
+                    actividades y acontecimientos de nuestra escuela.
+                </p>
+
+            </div>
+
+
+            <div class="news-card">
+
+                <div class="news-date">
+                    ESCUELA CRISTÓBAL COLÓN
+                </div>
+
+                <h3>
+                    Próximamente nuevas noticias
+                </h3>
+
+                <p>
+                    Esta sección quedará preparada para publicar
+                    información de interés para nuestros estudiantes,
+                    apoderados y comunidad educativa.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         GALERÍA
+    ========================== -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>Imágenes</span>
+
+                <h2>Galería</h2>
+
+                <p>
+                    Próximamente podremos incorporar fotografías de
+                    nuestras actividades y de la comunidad escolar.
+                </p>
+
+            </div>
+
+
+            <div class="gallery">
+
+                <div class="gallery-item">📷 Fotografía</div>
+                <div class="gallery-item">📷 Fotografía</div>
+                <div class="gallery-item">📷 Fotografía</div>
+                <div class="gallery-item">📷 Fotografía</div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PLATAFORMA ESCOLAR
+    ========================== -->
+
+    <section class="platform" id="plataforma">
+
+        <div class="container">
+
+            <h2>🔐 Plataforma Escolar</h2>
+
+            <p>
+                Accede a la plataforma escolar para consultar la
+                información académica y comunicacional.
+            </p>
+
+            <!--
+                AQUÍ COLOCAREMOS POSTERIORMENTE
+                EL ENLACE REAL DE LA PLATAFORMA ESCOLAR.
+            -->
+
+            <a href="#" class="btn">
+                Ingresar a la Plataforma
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACTO
+    ========================== -->
+
+    <section class="contact" id="contacto">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>Estamos para ayudarte</span>
+
+                <h2>Contáctanos</h2>
+
+                <p>
+                    Escuela Cristóbal Colón de Hualpén
+                </p>
+
+            </div>
+
+
+            <div class="contact-grid">
+
+                <div class="contact-card">
+
+                    <div class="icon">📍</div>
+
+                    <h3>Dirección</h3>
+
+                    <p>
+                        Cautín 327, Hualpén
+                    </p>
+
+                </div>
+
+
+                <div class="contact-card">
+
+                    <div class="icon">☎️</div>
+
+                    <h3>Teléfono</h3>
+
+                    <p>
+                        (41) 288 8161
+                    </p>
+
+                </div>
+
+
+                <div class="contact-card">
+
+                    <div class="icon">✉️</div>
+
+                    <h3>Redes sociales</h3>
+
+                    <p>
+                        Próximamente agregaremos
+                        nuestros enlaces oficiales.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PIE DE PÁGINA
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © Escuela Cristóbal Colón de Hualpén
+        </p>
+
+        <p>
+            Comunidad educativa comprometida con el aprendizaje,
+            la inclusión y el cuidado del medioambiente.
+        </p>
+
+    </footer>
+
+</body>
+</html>
