@@ -650,6 +650,60 @@
                 font-size: 12px;
             }
         }
+        /* =========================
+   GALERÍAS DE TALLERES
+========================= */
+
+.card-image.gallery {
+    position: relative;
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
+    border-radius: 14px 14px 0 0;
+}
+
+.card-image.gallery .gallery-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.card-image.gallery .gallery-image.active {
+    opacity: 1;
+}
+
+.gallery-prev,
+.gallery-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.55);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.gallery-prev {
+    left: 10px;
+}
+
+.gallery-next {
+    right: 10px;
+}
+
+.gallery-prev:hover,
+.gallery-next:hover {
+    background: rgba(0, 0, 0, 0.75);
+}
     </style>
 </head>
 
@@ -1014,9 +1068,14 @@
 
     <article class="card">
 
-        <div class="card-image">
-            <img src="voleibol.jpg" alt="Taller de Vóleibol">
-        </div>
+       <div class="card-image gallery" data-gallery="voleibol">
+    <img src="voleibol.jpg" alt="Taller de Vóleibol" class="gallery-image active">
+    <img src="voleibol-1.jpg" alt="Taller de Vóleibol" class="gallery-image">
+    <img src="voleibol-2.jpg" alt="Taller de Vóleibol" class="gallery-image">
+
+    <button class="gallery-prev" type="button" onclick="changeGallery('voleibol', -1)">❮</button>
+    <button class="gallery-next" type="button" onclick="changeGallery('voleibol', 1)">❯</button>
+</div>
 
         <div class="card-body">
 
@@ -1055,8 +1114,50 @@
 
     <article class="card">
 
-        <div class="card-image">
-            <img src="medio-ambiente-1.jpg" alt="Taller de Medio Ambiente">
+      <div class="card-image gallery" data-gallery="futbol">
+    <img src="futbol.jpg" alt="Taller de Fútbol" class="gallery-image active">
+    <img src="futbol-1.jpg" alt="Taller de Fútbol" class="gallery-image">
+
+    <button class="gallery-prev" type="button" onclick="changeGallery('futbol', -1)">❮</button>
+    <button class="gallery-next" type="button" onclick="changeGallery('futbol', 1)">❯</button>
+</div>
+
+        <div class="card-body">
+
+            <h3>Taller de Medio Ambiente</h3>
+
+            <p>
+                Actividades orientadas al cuidado de nuestro entorno,
+                el respeto por la naturaleza y la conciencia
+                medioambiental.
+            </p>
+
+        </div>
+
+    </article>
+
+
+    <article class="card">
+
+        <div class="card-image gallery" data-gallery="medioambiente">
+    <img src="medio-ambiente-1.jpg" alt="Taller de Medio Ambiente" class="gallery-image active">
+    <img src="medio-ambiente-2.jpg" alt="Taller de Medio Ambiente" class="gallery-image">
+    <img src="medio-ambiente-3.jpg" alt="Taller de Medio Ambiente" class="gallery-image">
+
+    <button class="gallery-prev" type="button" onclick="changeGallery('medioambiente', -1)">❮</button>
+    <button class="gallery-next" type="button" onclick="changeGallery('medioambiente', 1)">❯</button>
+</div>
+
+        <div class="card-body">
+    <article class="card">
+
+        <div class="card-image gallery" data-gallery="medioambiente">
+            <img src="medio-ambiente-1.jpg" alt="Taller de Medio Ambiente" class="gallery-image active">
+            <img src="medio-ambiente-2.jpg" alt="Taller de Medio Ambiente" class="gallery-image">
+            <img src="medio-ambiente-3.jpg" alt="Taller de Medio Ambiente" class="gallery-image">
+
+            <button class="gallery-prev" type="button" onclick="changeGallery('medioambiente', -1)">❮</button>
+            <button class="gallery-next" type="button" onclick="changeGallery('medioambiente', 1)">❯</button>
         </div>
 
         <div class="card-body">
@@ -1076,8 +1177,13 @@
 
     <article class="card">
 
-        <div class="card-image">
-            <img src="danza.jpg" alt="Taller de Danza">
+        <div class="card-image gallery" data-gallery="danza">
+            <img src="danza.jpg" alt="Taller de Danza" class="gallery-image active">
+            <img src="danza-1.jpg" alt="Taller de Danza" class="gallery-image">
+            <img src="danza-2.jpg" alt="Taller de Danza" class="gallery-image">
+
+            <button class="gallery-prev" type="button" onclick="changeGallery('danza', -1)">❮</button>
+            <button class="gallery-next" type="button" onclick="changeGallery('danza', 1)">❯</button>
         </div>
 
         <div class="card-body">
@@ -1095,7 +1201,6 @@
     </article>
 
 </div>
-
     <!-- =========================
          MEDIOAMBIENTE
     ========================== -->
@@ -1372,6 +1477,49 @@
         </p>
 
     </footer>
+
+    <script>
+        const galleryIndexes = {};
+
+        function changeGallery(galleryName, direction) {
+            const gallery = document.querySelector(
+                `.gallery[data-gallery="${galleryName}"]`
+            );
+
+            if (!gallery) return;
+
+            const images = gallery.querySelectorAll(".gallery-image");
+
+            if (!images.length) return;
+
+            if (galleryIndexes[galleryName] === undefined) {
+                galleryIndexes[galleryName] = 0;
+            }
+
+            images[galleryIndexes[galleryName]].classList.remove("active");
+
+            galleryIndexes[galleryName] += direction;
+
+            if (galleryIndexes[galleryName] >= images.length) {
+                galleryIndexes[galleryName] = 0;
+            }
+
+            if (galleryIndexes[galleryName] < 0) {
+                galleryIndexes[galleryName] = images.length - 1;
+            }
+
+            images[galleryIndexes[galleryName]].classList.add("active");
+        }
+
+        function autoGallery(galleryName) {
+            changeGallery(galleryName, 1);
+        }
+
+        setInterval(() => autoGallery("voleibol"), 4000);
+        setInterval(() => autoGallery("futbol"), 4500);
+        setInterval(() => autoGallery("medioambiente"), 5000);
+        setInterval(() => autoGallery("danza"), 5500);
+    </script>
 
 </body>
 </html>
