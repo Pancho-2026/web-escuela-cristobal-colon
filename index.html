@@ -307,91 +307,223 @@
             color: #596660;
         }
 
-        /* =========================
-           TALLERES
-        ========================= */
+       <!-- =========================
+     TALLERES
+========================= -->
 
-        .workshops {
-            background: white;
-        }
+<section class="workshops" id="talleres">
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
+    <div class="container">
 
-        .card {
-            border-radius: 20px;
-            overflow: hidden;
-            background: white;
-            border: 1px solid #e3eae3;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-            transition: 0.2s;
-        }
+        <div class="section-title">
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.10);
-        }
+            <span>Participación</span>
 
-        .card-image {
-            height: 180px;
-            background: linear-gradient(135deg, #dcefcf, #c4e4ce);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #4c8d49;
-            font-size: 50px;
-        }
+            <h2>Nuestros Talleres</h2>
 
-        .card-body {
-            padding: 25px;
-        }
+            <p>
+                Conoce los talleres y actividades que enriquecen
+                la formación y participación de nuestros estudiantes.
+            </p>
 
-        .card-body h3 {
-            color: #315b42;
-            margin-bottom: 10px;
-            font-size: 22px;
-        }
+        </div>
 
-        .card-body p {
-            color: #69756f;
-        }
+        <div class="cards">
 
-        /* =========================
-           MEDIO AMBIENTE
-        ========================= */
+            <!-- VÓLEIBOL -->
+            <article class="card">
 
-        .environment {
-            background: linear-gradient(120deg, #eff8e8, #dff2e5);
-        }
+                <div class="card-image gallery" data-gallery="voleibol">
 
-        .environment-box {
-            max-width: 900px;
-            margin: auto;
-            text-align: center;
-            background: rgba(255,255,255,0.82);
-            padding: 55px 40px;
-            border-radius: 28px;
-        }
+                    <img src="voleibol.jpg"
+                         alt="Taller de Vóleibol"
+                         class="gallery-image active">
 
-        .environment-box .icon {
-            font-size: 60px;
-            margin-bottom: 15px;
-        }
+                    <img src="voleibol-1.jpg"
+                         alt="Taller de Vóleibol"
+                         class="gallery-image">
 
-        .environment-box h2 {
-            color: #388047;
-            font-size: 35px;
-            margin-bottom: 15px;
-        }
+                    <img src="voleibol-2.jpg"
+                         alt="Taller de Vóleibol"
+                         class="gallery-image">
 
-        .environment-box p {
-            color: #5c6962;
-            font-size: 18px;
-        }
+                    <button class="gallery-prev"
+                            type="button"
+                            onclick="changeGallery('voleibol', -1)">❮</button>
 
+                    <button class="gallery-next"
+                            type="button"
+                            onclick="changeGallery('voleibol', 1)">❯</button>
+
+                </div>
+
+                <div class="card-body">
+
+                    <h3>🏐 Taller de Vóleibol</h3>
+
+                    <p>
+                        Espacio deportivo que promueve la actividad física,
+                        el compañerismo, el trabajo en equipo y la
+                        participación de nuestros estudiantes.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- FÚTBOL -->
+            <article class="card">
+
+                <div class="card-image gallery" data-gallery="futbol">
+
+                    <img src="futbol.jpg"
+                         alt="Taller de Fútbol"
+                         class="gallery-image active">
+
+                    <img src="futbol-1.jpg"
+                         alt="Taller de Fútbol"
+                         class="gallery-image">
+
+                    <button class="gallery-prev"
+                            type="button"
+                            onclick="changeGallery('futbol', -1)">❮</button>
+
+                    <button class="gallery-next"
+                            type="button"
+                            onclick="changeGallery('futbol', 1)">❯</button>
+
+                </div>
+
+                <div class="card-body">
+
+                    <h3>⚽ Taller de Fútbol</h3>
+
+                    <p>
+                        Actividad deportiva que fomenta la vida saludable,
+                        el trabajo en equipo, la disciplina y el
+                        compañerismo.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- DANZA -->
+            <article class="card">
+
+                <div class="card-image gallery" data-gallery="danza">
+
+                    <img src="danza.jpg"
+                         alt="Taller de Danza"
+                         class="gallery-image active">
+
+                    <img src="danza-1.jpg"
+                         alt="Taller de Danza"
+                         class="gallery-image">
+
+                    <img src="danza-2.jpg"
+                         alt="Taller de Danza"
+                         class="gallery-image">
+
+                    <button class="gallery-prev"
+                            type="button"
+                            onclick="changeGallery('danza', -1)">❮</button>
+
+                    <button class="gallery-next"
+                            type="button"
+                            onclick="changeGallery('danza', 1)">❯</button>
+
+                </div>
+
+                <div class="card-body">
+
+                    <h3>💃 Taller de Danza</h3>
+
+                    <p>
+                        Espacio de expresión artística que desarrolla
+                        la creatividad, el movimiento, la coordinación
+                        y la confianza de nuestros estudiantes.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- RECICLAJE -->
+            <article class="card">
+
+                <div class="card-image">
+
+                    <div style="font-size:70px;">
+                        ♻️
+                    </div>
+
+                </div>
+
+                <div class="card-body">
+
+                    <h3>♻️ Taller de Reciclaje</h3>
+
+                    <p>
+                        Actividades que promueven la reutilización de
+                        materiales, el reciclaje y la responsabilidad
+                        de nuestra comunidad con el medioambiente.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- MEDIO AMBIENTE -->
+            <article class="card">
+
+                <div class="card-image gallery" data-gallery="medioambiente">
+
+                    <img src="medio-ambiente-1.jpg"
+                         alt="Taller de Medio Ambiente"
+                         class="gallery-image active">
+
+                    <img src="medio-ambiente-2.jpg"
+                         alt="Taller de Medio Ambiente"
+                         class="gallery-image">
+
+                    <img src="medio-ambiente-3.jpg"
+                         alt="Taller de Medio Ambiente"
+                         class="gallery-image">
+
+                    <button class="gallery-prev"
+                            type="button"
+                            onclick="changeGallery('medioambiente', -1)">❮</button>
+
+                    <button class="gallery-next"
+                            type="button"
+                            onclick="changeGallery('medioambiente', 1)">❯</button>
+
+                </div>
+
+                <div class="card-body">
+
+                    <h3>🌱 Taller de Medio Ambiente</h3>
+
+                    <p>
+                        Actividades orientadas al cuidado de nuestro
+                        entorno, el respeto por la naturaleza y la
+                        conciencia medioambiental.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
         /* =========================
            ACTIVIDADES
         ========================= */
