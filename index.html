@@ -94,17 +94,18 @@
            PORTADA
         ========================= */
 
-        .hero {
-            min-height: 650px;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            background:
-                linear-gradient(110deg, #edf7d8 0%, #f8f8dc 45%, #ccebd4 100%);
-        }
+       .hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(rgba(255,255,255,0.35), rgba(255,255,255,0.35)),
+        url('entrada.jpg') center center / cover no-repeat;
+}
 
-        .hero::after {
+.hero::after {
             content: "";
             position: absolute;
             left: 0;
