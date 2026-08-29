@@ -558,22 +558,33 @@
         ========================= */
 
         .gallery {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-        }
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+}
 
-        .gallery-item {
-            height: 180px;
-            border-radius: 16px;
-            background: linear-gradient(135deg, #d9ebce, #bfe1ca);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #51894c;
-            font-weight: bold;
-        }
+.gallery-item {
+    flex: 0 0 260px;
+    height: 180px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #d9ebce, #bfe1ca);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #51894c;
+    font-weight: bold;
+    overflow: hidden;
+}
 
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
         /* =========================
            CONTACTO
         ========================= */
@@ -1380,66 +1391,65 @@
             </div>
 
 
-            <div class="news-card">
+         <div class="news-card">
 
-                <div class="news-date">
-                    ESCUELA CRISTÓBAL COLÓN
-                </div>
+    <div class="news-date">
+        18 DE AGOSTO DE 2026
+    </div>
 
-                <h3>
-                    Próximamente nuevas noticias
-                </h3>
+    <h3>
+        🇨🇱 Muestra Comunal de Cueca
+    </h3>
 
-                <p>
-                    Esta sección quedará preparada para publicar
-                    información de interés para nuestros estudiantes,
-                    apoderados y comunidad educativa.
-                </p>
+    <p>
+        Estudiantes de la Escuela Cristóbal Colón participaron con entusiasmo
+        en la Muestra Comunal de Cueca, una hermosa instancia para compartir
+        junto a otras comunidades educativas y celebrar nuestras tradiciones
+        y nuestro baile nacional.
 
-            </div>
+        💃🕺 Con alegría, dedicación y orgullo, nuestros estudiantes fueron
+        protagonistas de esta actividad, representando a nuestra escuela
+        y demostrando su entusiasmo por mantener vivas nuestras tradiciones.
 
+        🇨🇱 Felicitamos a nuestros estudiantes por su participación y por
+        representar con tanto entusiasmo a nuestra escuela.
+    </p>
+
+    <div class="gallery">
+
+        <div class="gallery-item">
+            <img src="noticia-cueca-comunal-2026-1.jpg"
+                 alt="Estudiantes de la Escuela Cristóbal Colón participando en la Muestra Comunal de Cueca">
         </div>
+
+        <div class="gallery-item">
+            <img src="noticia-cueca-comunal-2026-2.jpg"
+                 alt="Estudiantes participando en la Muestra Comunal de Cueca">
+        </div>
+
+        <div class="gallery-item">
+            <img src="noticia-cueca-comunal-2026-3.jpg"
+                 alt="Presentación de cueca de estudiantes de la Escuela Cristóbal Colón">
+        </div>
+
+        <div class="gallery-item">
+            <img src="noticia-cueca-comunal-2026-4.jpg"
+                 alt="Estudiantes de la Escuela Cristóbal Colón bailando cueca">
+        </div>
+
+        <div class="gallery-item">
+            <img src="noticia-cueca-comunal-2026-5.jpg"
+                 alt="Muestra Comunal de Cueca">
+        </div>
+
+    </div>
+
+</div>
+                    </div>
 
     </section>
 
-
-    <!-- =========================
-         GALERÍA
-    ========================== -->
-
-    <section>
-
-        <div class="container">
-
-            <div class="section-title">
-
-                <span>Imágenes</span>
-
-                <h2>Galería</h2>
-
-                <p>
-                    Próximamente podremos incorporar fotografías de
-                    nuestras actividades y de la comunidad escolar.
-                </p>
-
-            </div>
-
-
-            <div class="gallery">
-
-                <div class="gallery-item">📷 Fotografía</div>
-                <div class="gallery-item">📷 Fotografía</div>
-                <div class="gallery-item">📷 Fotografía</div>
-                <div class="gallery-item">📷 Fotografía</div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
+        <!-- =========================
          PLATAFORMA ESCOLAR
     ========================== -->
 
