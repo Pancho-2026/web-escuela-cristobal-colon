@@ -1369,84 +1369,330 @@
 </section>
 
 
-    <!-- =========================
-         NOTICIAS
-    ========================== -->
+   <!-- =========================
+     NOTICIAS
+========================== -->
 
-    <section class="news" id="noticias">
+<section class="news" id="noticias">
 
-        <div class="container">
+    <div class="container">
 
-            <div class="section-title">
+        <div class="section-title">
 
-                <span>Actualidad</span>
+            <span>Actualidad</span>
 
-                <h2>Noticias y Actividades</h2>
+            <h2>Noticias y Actividades</h2>
 
-                <p>
-                    Próximamente aquí podremos publicar las noticias,
-                    actividades y acontecimientos de nuestra escuela.
-                </p>
+            <p>
+                Próximamente aquí podremos publicar las noticias,
+                actividades y acontecimientos de nuestra escuela.
+            </p>
+
+        </div>
+
+        <!-- FECHA GENERAL -->
+        <div class="news-period">
+            AGOSTO 2026
+        </div>
+
+
+        <!-- =========================
+             NOTICIA 1 - ENGLISH WEEK
+        ========================== -->
+
+        <div class="news-card">
+
+            <h3>
+                🇬🇧 English Week
+            </h3>
+
+            <div class="news-gallery">
+
+                <button class="gallery-btn prev" onclick="changeNewsGallery(0, -1)">
+                    ←
+                </button>
+
+                <div class="news-gallery-frame">
+
+                    <img
+                        id="news-image-0"
+                        src="noticia-english-week-1.jpg"
+                        alt="English Week en la Escuela Cristóbal Colón"
+                    >
+
+                </div>
+
+                <button class="gallery-btn next" onclick="changeNewsGallery(0, 1)">
+                    →
+                </button>
 
             </div>
 
+            <p class="news-description">
+                Durante English Week, nuestros estudiantes participaron
+                en distintas actividades relacionadas con el idioma inglés,
+                aprendiendo y disfrutando de una experiencia educativa
+                diferente, entretenida y significativa.
+            </p>
 
-         <div class="news-card">
+        </div>
 
-    <div class="news-date">
-        18 DE AGOSTO DE 2026
+
+        <!-- =========================
+             NOTICIA 2 - MEDIO AMBIENTE
+        ========================== -->
+
+        <div class="news-card">
+
+            <h3>
+                🌱 Actividades de Medio Ambiente
+            </h3>
+
+            <div class="news-gallery">
+
+                <button class="gallery-btn prev" onclick="changeNewsGallery(1, -1)">
+                    ←
+                </button>
+
+                <div class="news-gallery-frame">
+
+                    <img
+                        id="news-image-1"
+                        src="noticia-medio-ambiente-1.jpg"
+                        alt="Actividad de Medio Ambiente en la Escuela Cristóbal Colón"
+                    >
+
+                </div>
+
+                <button class="gallery-btn next" onclick="changeNewsGallery(1, 1)">
+                    →
+                </button>
+
+            </div>
+
+            <p class="news-description">
+                Nuestra comunidad educativa participó en actividades
+                orientadas al cuidado del medio ambiente, promoviendo
+                en nuestros estudiantes la importancia de proteger,
+                respetar y cuidar nuestro entorno.
+            </p>
+
+        </div>
+
+
+        <!-- =========================
+             NOTICIA 3 - CENTRO DE ESTUDIANTES
+        ========================== -->
+
+        <div class="news-card">
+
+            <h3>
+                🗳️ Elección del Centro de Estudiantes
+            </h3>
+
+            <div class="news-gallery">
+
+                <button class="gallery-btn prev" onclick="changeNewsGallery(2, -1)">
+                    ←
+                </button>
+
+                <div class="news-gallery-frame">
+
+                    <img
+                        id="news-image-2"
+                        src="noticia-centro-estudiantes-1.jpg"
+                        alt="Elección del Centro de Estudiantes"
+                    >
+
+                </div>
+
+                <button class="gallery-btn next" onclick="changeNewsGallery(2, 1)">
+                    →
+                </button>
+
+            </div>
+
+            <p class="news-description">
+                Nuestros estudiantes participaron activamente en el proceso
+                de elección del Centro de Estudiantes, fortaleciendo valores
+                como la participación, la responsabilidad, el compañerismo
+                y la convivencia democrática dentro de nuestra escuela.
+            </p>
+
+        </div>
+
+
+        <!-- =========================
+             NOTICIA 4 - DESPEDIDA DIRECTORA
+        ========================== -->
+
+        <div class="news-card">
+
+            <h3>
+                💚 Despedida de nuestra directora Yasmin Garrido
+            </h3>
+
+            <div class="news-gallery">
+
+                <button class="gallery-btn prev" onclick="changeNewsGallery(3, -1)">
+                    ←
+                </button>
+
+                <div class="news-gallery-frame">
+
+                    <img
+                        id="news-image-3"
+                        src="noticia-despedida-directora-1.jpg"
+                        alt="Despedida de la directora Yasmin Garrido"
+                    >
+
+                </div>
+
+                <button class="gallery-btn next" onclick="changeNewsGallery(3, 1)">
+                    →
+                </button>
+
+            </div>
+
+            <p class="news-description">
+                Nuestra comunidad educativa compartió una emotiva instancia
+                de despedida para nuestra directora Yasmin Garrido, agradeciendo
+                su dedicación, compromiso y cariño entregado durante su
+                trayectoria junto a nuestra escuela.
+            </p>
+
+        </div>
+
+
+        <!-- =========================
+             NOTICIA 5 - MUESTRA COMUNAL DE CUECA
+        ========================== -->
+
+        <div class="news-card">
+
+            <h3>
+                🇨🇱 Muestra Comunal de Cueca
+            </h3>
+
+            <div class="news-gallery">
+
+                <button class="gallery-btn prev" onclick="changeNewsGallery(4, -1)">
+                    ←
+                </button>
+
+                <div class="news-gallery-frame">
+
+                    <img
+                        id="news-image-4"
+                        src="noticia-cueca-comunal-1.jpg"
+                        alt="Estudiantes de la Escuela Cristóbal Colón participando en la Muestra Comunal de Cueca"
+                    >
+
+                </div>
+
+                <button class="gallery-btn next" onclick="changeNewsGallery(4, 1)">
+                    →
+                </button>
+
+            </div>
+
+            <p class="news-description">
+                Estudiantes de la Escuela Cristóbal Colón participaron con
+                entusiasmo en la Muestra Comunal de Cueca, una hermosa instancia
+                para compartir junto a otras comunidades educativas y celebrar
+                nuestras tradiciones y nuestro baile nacional.
+
+                💃🕺 Con alegría, dedicación y orgullo, nuestros estudiantes
+                fueron protagonistas de esta actividad, representando a nuestra
+                escuela y demostrando su entusiasmo por mantener vivas nuestras
+                tradiciones.
+
+                🇨🇱 Felicitamos a nuestros estudiantes por su participación y por
+                representar con tanto entusiasmo a nuestra escuela.
+            </p>
+
+        </div>
+
     </div>
 
-    <h3>
-        🇨🇱 Muestra Comunal de Cueca
-    </h3>
+</section>
 
-    <p>
-        Estudiantes de la Escuela Cristóbal Colón participaron con entusiasmo
-        en la Muestra Comunal de Cueca, una hermosa instancia para compartir
-        junto a otras comunidades educativas y celebrar nuestras tradiciones
-        y nuestro baile nacional.
 
-        💃🕺 Con alegría, dedicación y orgullo, nuestros estudiantes fueron
-        protagonistas de esta actividad, representando a nuestra escuela
-        y demostrando su entusiasmo por mantener vivas nuestras tradiciones.
+<!-- =========================
+     JAVASCRIPT GALERÍAS NOTICIAS
+========================== -->
 
-        🇨🇱 Felicitamos a nuestros estudiantes por su participación y por
-        representar con tanto entusiasmo a nuestra escuela.
-    </p>
+<script>
 
-   <div class="gallery">
+const newsGalleries = [
 
-    <div class="gallery-item">
-        <img src="noticia-cueca-comunal-1.jpg"
-             alt="Estudiantes de la Escuela Cristóbal Colón participando en la Muestra Comunal de Cueca">
-    </div>
+    [
+        "noticia-english-week-1.jpg",
+        "noticia-english-week-2.jpg",
+        "noticia-english-week-3.jpg",
+        "noticia-english-week-4.jpg"
+    ],
 
-    <div class="gallery-item">
-        <img src="noticia-cueca-comunal-2.jpg"
-             alt="Estudiantes participando en la Muestra Comunal de Cueca">
-    </div>
+    [
+        "noticia-medio-ambiente-1.jpg",
+        "noticia-medio-ambiente-2.jpg",
+        "noticia-medio-ambiente-3.jpg",
+        "noticia-medio-ambiente-4.jpg",
+        "noticia-medio-ambiente-5.jpg",
+        "noticia-medio-ambiente-6.jpg"
+    ],
 
-    <div class="gallery-item">
-        <img src="noticia-cueca-comunal-3.jpg"
-             alt="Presentación de cueca de estudiantes de la Escuela Cristóbal Colón">
-    </div>
+    [
+        "noticia-centro-estudiantes-1.jpg",
+        "noticia-centro-estudiantes-2.jpg",
+        "noticia-centro-estudiantes-3.jpg",
+        "noticia-centro-estudiantes-4.jpg",
+        "noticia-centro-estudiantes-5.jpg"
+    ],
 
-    <div class="gallery-item">
-        <img src="noticia-cueca-comunal-4.jpg"
-             alt="Estudiantes de la Escuela Cristóbal Colón bailando cueca">
-    </div>
+    [
+        "noticia-despedida-directora-1.jpg",
+        "noticia-despedida-directora-2.jpg",
+        "noticia-despedida-directora-3.jpg",
+        "noticia-despedida-directora-4.jpg",
+        "noticia-despedida-directora-5.jpg"
+    ],
 
-    <div class="gallery-item">
-        <img src="noticia-cueca-comunal-5.jpg"
-             alt="Muestra Comunal de Cueca">
-    </div>
+    [
+        "noticia-cueca-comunal-1.jpg",
+        "noticia-cueca-comunal-2.jpg",
+        "noticia-cueca-comunal-3.jpg",
+        "noticia-cueca-comunal-4.jpg",
+        "noticia-cueca-comunal-5.jpg"
+    ]
 
-</div>
-</div>
-                    </div>
+];
 
-    </section>
+
+const newsGalleryIndexes = [0, 0, 0, 0, 0];
+
+
+function changeNewsGallery(newsIndex, direction) {
+
+    const gallery = newsGalleries[newsIndex];
+
+    newsGalleryIndexes[newsIndex] += direction;
+
+    if (newsGalleryIndexes[newsIndex] < 0) {
+        newsGalleryIndexes[newsIndex] = gallery.length - 1;
+    }
+
+    if (newsGalleryIndexes[newsIndex] >= gallery.length) {
+        newsGalleryIndexes[newsIndex] = 0;
+    }
+
+    const image = document.getElementById("news-image-" + newsIndex);
+
+    image.src = gallery[newsGalleryIndexes[newsIndex]];
+
+}
+
+</script>
 
         <!-- =========================
          PLATAFORMA ESCOLAR
