@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Escuela Cristóbal Colón de Hualpén</title>
+    
 
     <style>
         * {
@@ -840,6 +841,77 @@
         @media (max-width: 550px) {
             .workshops .cards {
                 grid-template-columns: 1fr;
+            }
+        }
+                /* =========================
+           NOTICIAS - AGOSTO 2026
+        ========================== */
+
+        .news-grid {
+            display: grid !important;
+            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+            gap: 24px !important;
+            width: 100% !important;
+            margin-top: 25px !important;
+            align-items: start !important;
+        }
+
+        .news-card {
+            width: auto !important;
+            max-width: none !important;
+            min-width: 0 !important;
+            box-sizing: border-box !important;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 16px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10);
+            overflow: hidden;
+        }
+
+        .news-card h3 {
+            margin: 0 0 14px !important;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .news-card .card-image.gallery {
+            width: 100% !important;
+            height: 220px !important;
+            min-height: 220px !important;
+            max-height: 220px !important;
+            position: relative !important;
+            overflow: hidden !important;
+        }
+
+        .news-card .gallery-image {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+        }
+
+        .news-card p {
+            margin: 14px 0 0 !important;
+            font-size: 0.9rem;
+            line-height: 1.45;
+        }
+
+        .news-period {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 25px 0 12px;
+        }
+
+        @media (max-width: 900px) {
+            .news-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .news-grid {
+                grid-template-columns: 1fr !important;
             }
         }
     </style>
